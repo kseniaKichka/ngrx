@@ -1,0 +1,15 @@
+<p>
+  order-list {{title}} works!
+  <input type="text" [(ngModel)]="title" />
+</p>
+<div class="row">
+  <div class="column">
+    <app-orders-array
+            [orders]="orders$ | async"
+            (orderSelected)="navigateToOrder($event)"
+    ></app-orders-array>
+  </div>
+  <div class="column">
+    <app-order-details [order]="order$ | async"></app-order-details>
+  </div>
+</div>

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {State} from "@ngrx/store";
+import * as fromStore from './store/state/app.state'
 
 @Component({
   selector: 'app-root',
