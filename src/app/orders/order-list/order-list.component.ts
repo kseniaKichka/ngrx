@@ -3,7 +3,7 @@ import { selectOrderList, selectSelectedOrder } from "../../store/selectors/orde
 import { AppState } from "../../store/state/app.state";
 import { Store, select } from '@ngrx/store';
 import { Router, ActivatedRoute } from '@angular/router';
-import { GetOrder, GetOrders } from "../../store/actions/order.actions";
+import { GetOrder, GetOrders, CreateOrder } from "../../store/actions/order.actions";
 
 @Component({
   selector: 'app-order-list',
@@ -35,6 +35,10 @@ export class OrderListComponent implements OnInit {
         this.id = id;
         this._store.dispatch(new GetOrder(this.id));
         // this._router.navigate(['order', id]);
+    }
+
+    addOrder(title: string) {
+        this._store.dispatch(new CreateOrder(title));
     }
 
 }

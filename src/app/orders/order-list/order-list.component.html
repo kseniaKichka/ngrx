@@ -1,7 +1,10 @@
-<p>
+<div class="row">
   order-list {{title}} works!
   <input type="text" [(ngModel)]="title" />
-</p>
+  <div class="form-group">
+    <button class="btn btn-default" (click)="addOrder(title)">Добавить</button>
+  </div>
+</div>
 <div class="row">
   <div class="column">
     <app-orders-array

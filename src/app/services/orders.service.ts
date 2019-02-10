@@ -19,4 +19,8 @@ export class OrdersService {
         return this._http.get<OrderHttp>(this.ordersUrl);
     }
 
+    addOrder(title: string) {
+        return this._http.post(this.ordersUrl, title);
+    }
+
 }

@@ -15,6 +15,17 @@ export const orderReducers = (state = initialOrderState, action: OrderActions): 
                 selectedOrder: action.payload
             };
         }
+        case OrderActionsTypes.CreateOrder: {
+            return {
+                ...state
+            };
+        }
+        case OrderActionsTypes.CreateOrderSuccess: {
+            return {
+                ...state,
+                orders: Object.assign(state.orders, action.payload)
+            };
+        }
         default:
             return state;
     }
